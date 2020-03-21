@@ -8,4 +8,7 @@
     <string name="login">Log In</string>
     <string name="invalid_regis_code">Invalid Registration Code</string>
     <string name="user_doesnt_exist">User does not exist</string>
+    <string name="time">Time</string>
+    <string name="logout">Log Out</string>
+    <string name="fetching_location">Fetching Location...</string>
 </resources>

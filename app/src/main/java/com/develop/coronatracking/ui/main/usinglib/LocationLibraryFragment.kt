@@ -7,13 +7,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.work.ExistingPeriodicWorkPolicy
+import androidx.work.PeriodicWorkRequestBuilder
+import androidx.work.WorkManager
+import com.develop.coronatracking.MainActivity
 import com.develop.coronatracking.R
 import com.develop.coronatracking.repo.FirebaseStorageHelper
 import com.develop.coronatracking.repo.UserLocation
 import com.develop.coronatracking.util.CommonUtils
 import com.develop.coronatracking.util.SharedPreferenceUtil
 import io.nlopez.smartlocation.SmartLocation
+import kotlinx.android.synthetic.main.item_location.*
 import kotlinx.android.synthetic.main.location_library_fragment.*
+import java.util.concurrent.TimeUnit
 
 
 class LocationLibraryFragment : Fragment() {
@@ -22,6 +28,7 @@ class LocationLibraryFragment : Fragment() {
         fun newInstance() =
             LocationLibraryFragment()
     }
+
 
     private lateinit var viewModel: LocationLibraryViewModel
 
@@ -41,6 +48,7 @@ class LocationLibraryFragment : Fragment() {
     }
 
     fun startTracking(){
+        (activity as MainActivity).enqueWorker()
         SmartLocation.with(context).location()
             .start {
                 Log.i("testLocation", "starting ")
@@ -53,7 +61,10 @@ class LocationLibraryFragment : Fragment() {
                 ),
                     userId = SharedPreferenceUtil.getData(SharedPreferenceUtil.KEY_USER_NAME,"default"))
                 Log.i("testLocation", "smartLoc : $it")
-                libLocationTv.text = it.toString() + " \n Time : " +CommonUtils.convertTime(it.time)
+                fetchingLocationTv.visibility = View.GONE
+                topCL.visibility = View.VISIBLE
+                currentLocationTv.text = "lat: ${it.latitude}" +" long : ${it.longitude}"
+                locationTimeTv.text = CommonUtils.convertTime(it.time)
             }
     }
 
