@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">CovidTrack</string>
+    <string name="location_updated">Location Updated %s</string>
+    <string name="remove_location_updates">Remove Location Updates</string>
+    <string name="welcome_to_covidTrack">Welcome to CovidTrack</string>
+    <string name="enter_your_registered_code">Enter your registration code</string>
+    <string name="registration_number_hint">Registration Code</string>
+    <string name="login">Log In</string>
+    <string name="invalid_regis_code">Invalid Registration Code</string>
+    <string name="user_doesnt_exist">User does not exist</string>
+</resources>

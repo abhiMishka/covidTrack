@@ -1,0 +1,188 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="MainHeading">
+        <item name="android:fontFamily">@font/opensans_semibold</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/dark</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:lineSpacingExtra">9sp</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="PageHeading">
+        <item name="android:fontFamily">@font/opensans_semibold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/dark</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:lineSpacingExtra">7sp</item>
+    </style>
+
+    <style name="LargeButtonTittle">
+        <item name="android:fontFamily">@font/opensans_bold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:lineSpacingExtra">7sp</item>
+    </style>
+    <style name="ButtonTittle">
+        <item name="android:fontFamily">@font/opensans_bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="SecondayTittle">
+        <item name="android:fontFamily">@font/opensans_bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/main</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="InputStyle">
+        <item name="android:fontFamily">@font/opensans_semibold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black_44</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+    </style>
+
+    <style name="BodyLarge">
+        <item name="android:fontFamily">@font/opensans_semibold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/dark</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="BodyBoldDark">
+        <item name="android:fontFamily">@font/opensans_semibold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/dark</item>
+        <item name="android:lineSpacingExtra">5sp</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="BodyBoldLight">
+        <item name="android:fontFamily">@font/opensans_semibold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/lightgrey</item>
+        <item name="android:lineSpacingExtra">5sp</item>
+        <item name="android:gravity">end</item>
+    </style>
+
+    <style name="BodyLight">
+        <item name="android:fontFamily">@font/opensans_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/lightgrey</item>
+        <item name="android:lineSpacingExtra">5sp</item>
+        <item name="android:gravity">end</item>
+    </style>
+
+    <style name="BodyLight_link">
+        <item name="android:textColor">@drawable/bg_enable_diable_link</item>
+        <item name="android:fontFamily">@font/opensans_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">5sp</item>
+        <item name="android:gravity">end</item>
+    </style>
+
+
+    <style name="TextlinkBlue">
+        <item name="android:fontFamily">@font/opensans_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/main</item>
+        <item name="android:lineSpacingExtra">5sp</item>
+    </style>
+
+    <style name="ErrorMessage">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/error_red</item>
+        <item name="android:lineSpacingExtra">5sp</item>
+        <item name="android:fontFamily">@font/opensans_semibold</item>
+    </style>
+
+    <style name="ActiveTag">
+        <item name="android:fontFamily">OpenSansSemiBold-Regular</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/dark</item>
+    </style>
+
+    <style name="SmallLight">
+        <item name="android:fontFamily">@font/opensans_regular</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/lightgrey</item>
+    </style>
+    <style name="LightGrey">
+        <item name="android:fontFamily">@font/opensans_semibold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/lightgrey</item>
+        <item name="android:lineSpacingExtra">5sp</item>
+    </style>
+    <style name="SmallDark">
+        <item name="android:fontFamily">@font/opensans_regular</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/dark</item>
+    </style>
+    <style name="TopNav">
+        <item name="android:fontFamily">@font/opensans_semibold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/lightgrey</item>
+    </style>
+    <style name="TopNavActive">
+        <item name="android:fontFamily">@font/opensans_semibold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/main</item>
+    </style>
+
+    <style name="LightGreySubheading">
+        <item name="android:fontFamily">@font/opensans_semibold</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/lightgrey</item>
+        <item name="android:lineSpacingExtra">5sp</item>
+    </style>
+    <style name="ExtraSmallLight">
+        <item name="android:fontFamily">@font/opensans_regular</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/lightgrey</item>
+        <item name="android:lineSpacingExtra">5sp</item>
+    </style>
+    <style name="TitleBig">
+        <item name="android:fontFamily">@font/opensans_semibold</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">@color/dark</item>
+        <item name="android:lineSpacingExtra">11sp</item>
+        <item name="android:letterSpacing">-0.02</item>
+    </style>
+
+    <style name="OtpStyle">
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">44dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLength">1</item>
+        <item name="android:inputType">number</item>
+        <item name="android:background">@color/otp_bg</item>
+        <item name="android:cursorVisible">false</item>
+        <item name="android:fontFamily">@font/opensans_semibold</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/dark</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:lineSpacingExtra">9sp</item>
+    </style>
+
+    <style name="Theme.AppCompat.Light.NoActionBar.FullScreen" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+</resources>
