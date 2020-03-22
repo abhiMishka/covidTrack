@@ -38,7 +38,6 @@ class MainActivity : AppCompatActivity() {
                 .commitNow()
         }
 
-
     }
 
     override fun onRequestPermissionsResult(

@@ -2,25 +2,25 @@ package com.develop.coronatracking.ui.main.usinglib
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.work.ExistingPeriodicWorkPolicy
-import androidx.work.PeriodicWorkRequestBuilder
-import androidx.work.WorkManager
 import com.develop.coronatracking.MainActivity
 import com.develop.coronatracking.R
+import com.develop.coronatracking.TopApplicationClass
 import com.develop.coronatracking.repo.FirebaseStorageHelper
 import com.develop.coronatracking.repo.UserLocation
 import com.develop.coronatracking.util.CommonUtils
+import com.develop.coronatracking.util.LocationUtil
 import com.develop.coronatracking.util.SharedPreferenceUtil
 import io.nlopez.smartlocation.SmartLocation
+import io.nlopez.smartlocation.location.LocationProvider
+import io.nlopez.smartlocation.location.config.LocationParams
+import io.nlopez.smartlocation.location.providers.MultiFallbackProvider
 import kotlinx.android.synthetic.main.item_location.*
-import kotlinx.android.synthetic.main.location_library_fragment.*
-import java.util.concurrent.TimeUnit
-
 
 class LocationLibraryFragment : Fragment() {
 
@@ -49,7 +49,9 @@ class LocationLibraryFragment : Fragment() {
 
     fun startTracking(){
         (activity as MainActivity).enqueWorker()
-        SmartLocation.with(context).location()
+        val fallbackProvider: LocationProvider = MultiFallbackProvider.Builder()
+            .withGooglePlayServicesProvider().withDefaultProvider().build()
+        SmartLocation.with(TopApplicationClass.instance).location(fallbackProvider).config(LocationParams.BEST_EFFORT)
             .start {
                 Log.i("testLocation", "starting ")
 
@@ -66,6 +68,10 @@ class LocationLibraryFragment : Fragment() {
                 currentLocationTv.text = "lat: ${it.latitude}" +" long : ${it.longitude}"
                 locationTimeTv.text = CommonUtils.convertTime(it.time)
             }
+
+        if (!SmartLocation.with(context).location().state().isAnyProviderAvailable()){
+            CommonUtils.showToast(getString(R.string.turn_on_gps));
+        }
     }
 
 }

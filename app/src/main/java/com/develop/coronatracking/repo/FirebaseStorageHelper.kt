@@ -22,8 +22,8 @@ object FirebaseStorageHelper {
     fun addUserLocationData(userLocation: UserLocation,userId : String){
         Log.i("testLocation", "adding document")
         db.collection(LOCATIONS_COLLECTION).document(DOCUMENT_LOCATIONS).collection(userId)
-            .document(CommonUtils.convertMilliSecToDate(System.currentTimeMillis()))
-            .collection(CommonUtils.convertMilliSecToTime(System.currentTimeMillis()))
+            .document(CommonUtils.convertMilliSecToDate(userLocation.timeStamp))
+            .collection(CommonUtils.convertMilliSecToTime(userLocation.timeStamp))
             .add(userLocation)
             .addOnSuccessListener { data ->
                 Log.i("testLocation", "DocumentSnapshot added with $data")

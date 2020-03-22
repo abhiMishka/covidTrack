@@ -13,11 +13,16 @@ import com.develop.coronatracking.util.CommonUtils
 import com.develop.coronatracking.util.LocationUtil
 import com.develop.coronatracking.util.SharedPreferenceUtil
 import io.nlopez.smartlocation.SmartLocation
+import io.nlopez.smartlocation.location.LocationProvider
+import io.nlopez.smartlocation.location.providers.MultiFallbackProvider
 
 class LibLocationWorkManager(cntx: Context, workerParams: WorkerParameters) :
     Worker(cntx, workerParams) {
     override fun doWork(): Result {
-        SmartLocation.with(TopApplicationClass.instance).location()
+
+        val fallbackProvider: LocationProvider = MultiFallbackProvider.Builder()
+            .withGooglePlayServicesProvider().build()
+        SmartLocation.with(TopApplicationClass.instance).location(fallbackProvider)
             .start {
                 Log.i("testLocation", "lib starting ")
 
